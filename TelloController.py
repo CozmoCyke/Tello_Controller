@@ -13,3 +13,16 @@ class TelloController(Widget):
 
     def land(self):
         self.drone.land()
+
+    def left(self):
+        self.drone.move_left(2)
+
+    def right(self):
+        self.drone.move_right(2)
+
+    def moveup(self):
+        print('going up')
+        #self.drone.move_up(2)
+
+    def movedown(self):
+        self.drone.move_down(2)

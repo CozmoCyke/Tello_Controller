@@ -18,7 +18,7 @@ import time
 import traceback
 
 class Tello:
-    """Wrapper to simply interactions with the Ryze Tello drone."""
+    """Wrapper to simplify interactions with the Ryze Tello drone."""
 
     def __init__(self, local_ip, local_port, imperial=True, command_timeout=.3, tello_ip='192.168.10.1', tello_port=8889):
         """Binds to the local IP/port and puts the Tello into command mode.
@@ -177,7 +177,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.move('down', distance)
+        self.move('down', distance)
 
     def move_forward(self, distance):
         """Moves forward for a distance.
@@ -187,7 +187,7 @@ class Tello:
         Returns:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
-        return self.move('forward', distance)
+        self.move('forward', distance)
 
     def move_left(self, distance):
         """Moves left for a distance.
@@ -197,7 +197,7 @@ class Tello:
         Returns:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
-        return self.move('left', distance)
+        self.move('left', distance)
 
     def move_right(self, distance):
         """Moves right for a distance.
@@ -205,7 +205,7 @@ class Tello:
         Args:
             distance (int): Distance to move.
         """
-        return self.move('right', distance)
+        self.move('right', distance)
 
     def move_up(self, distance):
         """Moves up for a distance.
@@ -216,7 +216,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.move('up', distance)
+        self.move('up', distance)
 
     def send_command(self, command):
         """Sends a command to the Tello and waits for a response.
