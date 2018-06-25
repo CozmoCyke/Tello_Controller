@@ -6,7 +6,8 @@ Builder.load_file('tello.kv')
 
 class TelloController(Widget):
     def initialise(self):
-        self.drone = tello.Tello('192.168.10.2', 8889)
+        return
+        #self.drone = tello.Tello('192.168.10.2', 8889)
 
     def takeoff(self):
         self.drone.takeoff()
