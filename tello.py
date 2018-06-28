@@ -74,7 +74,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.send_command('flip %s' % direction)
+        self.send_command('flip %s' % direction)
 
     def get_battery(self):
         """Returns percent battery life remaining.
@@ -89,7 +89,7 @@ class Tello:
         except:
             pass
 
-        return battery
+        battery
 
 
     def get_flight_time(self):
@@ -105,7 +105,7 @@ class Tello:
         except:
             pass
 
-        return flight_time
+        flight_time
 
     def get_speed(self):
         """Returns the current speed.
@@ -125,7 +125,7 @@ class Tello:
         except:
             pass
 
-        return speed
+        speed
 
     def land(self):
         """Initiates landing.
@@ -133,7 +133,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.send_command('land')
+        self.send_command('land')
 
     def move(self, direction, distance):
         """Moves in a direction for a distance.
@@ -155,7 +155,7 @@ class Tello:
         else:
             distance = int(round(distance * 100))
 
-        return self.send_command('%s %s' % (direction, distance))
+        self.send_command('%s %s' % (direction, distance))
 
     def move_backward(self, distance):
         """Moves backward for a distance.
@@ -166,7 +166,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.move('back', distance)
+        self.move('back', distance)
 
     def move_down(self, distance):
         """Moves down for a distance.
@@ -246,7 +246,7 @@ class Tello:
         response = self.response.decode('utf-8')
         self.response = None
 
-        return response
+        response
 
     def set_abort_flag(self):
         """Sets self.abort_flag to True.
@@ -275,7 +275,7 @@ class Tello:
         else:
             speed = int(round(speed * 27.7778))
 
-        return self.send_command('speed %s' % speed)
+        self.send_command('speed %s' % speed)
 
     def takeoff(self):
         """Initiates take-off.
@@ -283,7 +283,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.send_command('takeoff')
+        self.send_command('takeoff')
 
     def rotate_cw(self, degrees):
         """Rotates clockwise.
@@ -293,7 +293,7 @@ class Tello:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
 
-        return self.send_command('cw %s' % degrees)
+        self.send_command('cw %s' % degrees)
 
     def rotate_ccw(self, degrees):
         """Rotates counter-clockwise.
@@ -302,4 +302,4 @@ class Tello:
         Returns:
             str: Response from Tello, 'OK' or 'FALSE'.
         """
-        return self.send_command('ccw %s' % degrees)
+        self.send_command('ccw %s' % degrees)

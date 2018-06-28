@@ -1,21 +1,26 @@
 #:kivy 1.0.9
 
 <TelloController>:
-    Label:
-        id: title_label
-        font_size: 75  
-        center_x: root.width / 2
-        top: root.top - 5
-        text: str("Control your Tello")
+    Button:
+        text: str("Rotate")
+        center_x: root.width/4
+        top: root.top - (root.height/8)
+        on_press: root.rotatecw()
+
+    Button:
+        text: str("Rotate")
+        center_x: root.width * 0.75
+        top: root.top - (root.height/9)
+        on_press: root.rotateccw()
 
     Button:
         id: take_off
         font_size: 25
         on_press: root.takeoff()
-        center_x: root.width / 2
+        center_x: root.width / 9
         background_normal: ''
         background_color: 0, 1, 0, 1
-        top: root.top - (root.height/3)
+        top: root.top
         text: str("Take Off")
 
     Button:
@@ -24,9 +29,15 @@
         on_press: root.land()
         background_normal: ''
         background_color: 1, 0, 0, 1.
-        center_x: root.width / 2
-        top: root.top - (root.height/1.75)
+        center_x: root.width / 9
+        top: root.top - (root.height/4)
         text: str("Land")
+
+    Button:
+        text: str("Forwards")
+        on_press: root.forward()
+        top: root.top - (root.height/9)
+        center_x: root.width / 2
 
     Button:
         font_size: 25
@@ -56,9 +67,7 @@
         center_x: root.width
         orientation: 'vertical'
 
-    Scatter:
+    ProgressBar:
+        value: root.speed
+        max_value: 1
         center_x: root.width/2
-        
-        canvas:
-            Rectangle:
-                size: 50,50
